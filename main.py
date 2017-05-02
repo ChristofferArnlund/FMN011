@@ -15,7 +15,7 @@ x=np.arange(0, 301, 50)
 y=[70,70,55,22,13,10,10]
 cs = CubicSpline(x, y,bc_type='clamped')
 
-xs = np.arange(-100, 600, 0.1)
+xs = np.arange(-50, 450, 0.1)
 
 f = interp1d(x, y)
 #f2 = interp1d(x, y, kind='cubic')
@@ -24,7 +24,7 @@ plt.figure()
 plt.plot(x, y, 'o', label='data')
 plt.plot(xs, cs(xs), label="S'")
 plt.figure()
-plt.plot(xs,-0.001*cs(xs), label="J")
+plt.plot(xs,-0.001*cs(xs,1), label="J")
 plt.figure()
 plt.plot(xs, cs(xs, 1), label="S'")
 plt.figure()
